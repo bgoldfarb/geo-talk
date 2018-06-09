@@ -1,0 +1,20 @@
+.page-title{
+    color: #429ef4;
+    padding-bottom: 25px;
+}
+
+.current-position{
+    visibility: visible;
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+
+.current-city{
+    visibility: visible;
+    padding-bottom: 25px;
+}
+
+.showing-text{
+    padding-top: 25px;
+    color: #429ef4;
+}
