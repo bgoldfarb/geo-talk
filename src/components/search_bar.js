@@ -23,6 +23,7 @@ export default class SearchBar extends Component {
     onFormSubmit(event){
         event.preventDefault()
         tempArray.push(this.state.term)
+        console.log(tempArray)
         this.setState({termArray: tempArray })
         this.setState({term: ''})
     }

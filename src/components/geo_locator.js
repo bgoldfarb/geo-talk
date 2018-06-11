@@ -16,6 +16,7 @@ constructor(props){
 }
 
 fetchCity = async () => {
+    //https://maps.googleapis.com/maps/api/js?client=YOUR_CLIENT_ID &v=3.32&callback=initMap
     const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.latitude},${this.state.longitude}`)
     const json = await res.json()
     this.setState({

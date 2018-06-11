@@ -6,14 +6,11 @@ export default class ShowText extends Component {
         super(props)
     }
 
-    showText(){
-    }
-
+   
     render(){
         return(
             <div className = "showing-text">
               {this.props.text}
-            {this.showText()}
             </div>
         )
     }
