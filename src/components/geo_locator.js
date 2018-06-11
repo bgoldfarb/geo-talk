@@ -16,9 +16,8 @@ constructor(props){
 }
 
 fetchCity = async () => {
-    const res = await fetch(`http://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.latitude},${this.state.longitude}`)
+    const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.latitude},${this.state.longitude}`)
     const json = await res.json()
-    console.log(json.results[1].formatted_address)
     this.setState({
         city: json.results[1].formatted_address
     })
