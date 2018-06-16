@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SearchBar from './search_bar'
+import EnterMessage from './enter_message'
 import PageTitle from './page_title'
 import GeoLocator from './geo_locator'
 
@@ -13,7 +13,7 @@ export default class App extends Component {
       <div>
         <PageTitle />
         <GeoLocator />
-        <SearchBar />
+        <EnterMessage />
       </div>
     );
   }

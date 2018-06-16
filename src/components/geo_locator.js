@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import keys from '../config/keys'
+
 export default class GeoLocator  extends Component  {
 
 constructor(props){
@@ -16,8 +18,7 @@ constructor(props){
 }
 
 fetchCity = async () => {
-    //https://maps.googleapis.com/maps/api/js?client=YOUR_CLIENT_ID &v=3.32&callback=initMap
-    const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.latitude},${this.state.longitude}`)
+    const res = await fetch(`https://maps.googleapis.com/maps/api/client=${keys.googleMapsClientID}/geocode/json?latlng=${this.state.latitude},${this.state.longitude}`)
     const json = await res.json()
     this.setState({
         city: json.results[1].formatted_address
@@ -39,10 +40,6 @@ fetchCity = async () => {
           } 
     }   
         render(){
-            const visible = {
-                visibility: visible
-        };
-
             return(
             <div>
                <button className = "btn btn-secondary" onClick = {() => this.geoLocator()}> Find My Location </button> 

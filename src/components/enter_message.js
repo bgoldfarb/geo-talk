@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import ShowText from './show_text'
 let tempArray = []
 
-export default class SearchBar extends Component {
+export default class EnterMessage extends Component {
 
     constructor(props){
         super(props)
