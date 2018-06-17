@@ -5,7 +5,7 @@ const passport = require('passport')
 require('./models/user') //loads mongoose collection file, creating the model class
 require('./services/passport')
 
-const keys = require('./src/config/dev_keys')
+const keys = require('./src/config/keys')
 
 
 mongoose.connect(keys.mongoURI)

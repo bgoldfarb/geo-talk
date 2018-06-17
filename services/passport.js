@@ -1,6 +1,6 @@
 const passport = require('passport') //gives express way to handle authentication 
 const GoogleStrategy = require('passport-google-oauth20').Strategy
-const keys = require('../src/config/dev_keys')
+const keys = require('../src/config/keys')
 const mongoose = require('mongoose')
 
 const User = mongoose.model('users') //access to mongo model class, fetching users from mongoose
