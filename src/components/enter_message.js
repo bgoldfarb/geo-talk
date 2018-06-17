@@ -23,7 +23,7 @@ export default class EnterMessage extends Component {
     onFormSubmit(event){
         event.preventDefault()
         tempArray.push(this.state.term)
-        console.log(tempArray)
+        // console.log(tempArray)
         this.setState({termArray: tempArray })
         this.setState({term: ''})
     }
