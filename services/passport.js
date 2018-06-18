@@ -1,6 +1,6 @@
 const passport = require('passport') //gives express way to handle authentication 
 const GoogleStrategy = require('passport-google-oauth20').Strategy
-const keys = require('../src/config/keys')
+const keys = require('../config/keys')
 const mongoose = require('mongoose')
 
 const User = mongoose.model('users') //access to mongo model class, fetching users from mongoose
@@ -19,7 +19,7 @@ passport.use(new GoogleStrategy({
         clientID: keys.googleClientID,
         clientSecret: keys.googleClientSecret,
         callbackURL: '/auth/google/callback',
-        proxy: true //https vs http
+        proxy: true 
     },
      (accessToken, refreshToken, profile, done) => {
          //Promise is a tool we use with JS to handle asynchronous code
