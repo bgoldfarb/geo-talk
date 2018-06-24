@@ -18,7 +18,7 @@ constructor(props){
 }
 
 fetchCity = async () => {
-    const res = await fetch(`https://maps.googleapis.com/maps/js?api/key=AIzaSyDT_ZzwlRQAAMsEBA3JdPL-LLPSgIjx27g/geocode/json?latlng=${this.state.latitude},${this.state.longitude}`)
+    const res = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${this.state.latitude},${this.state.longitude}`)
     const json = await res.json()
     this.setState({
         city: json.results[1].formatted_address
@@ -42,7 +42,7 @@ fetchCity = async () => {
         render(){
             return(
             <div>
-               <button className = "btn btn-secondary" onClick = {() => this.geoLocator()}> Find My Location </button> 
+               <button className = "btn" onClick = {() => this.geoLocator()}> Find My Location </button> 
                <div className = "current-position"> Position: {this.state.latitude}, {this.state.longitude} </div>
                <div className = "current-city" > City: {this.state.city}</div>
             </div>

@@ -11,6 +11,8 @@
     }
   },
   "dependencies": {
+    "materialize-css": "^1.0.0-rc.1",
+    "moment": "^2.22.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",

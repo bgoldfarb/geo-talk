@@ -3,9 +3,15 @@ import React, {Component} from 'react'
 const pageTitle = () => {
 
     return(
-        <div>
-            <h1 className="page-title">  GeoTalk    </h1>
-        </div>
+        <nav>
+            <div className="nav-wrapper teal lighten-3">
+            <a href="#" className="brand-logo">GeoTalk</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href='/auth/google'> Sign in with Google </a></li>
+                <li><a href='/api/logout'> Logout </a></li>
+            </ul>
+            </div>
+      </nav>
     )
 }
 

@@ -23,8 +23,7 @@ passport.use(new GoogleStrategy({
     },
      (accessToken, refreshToken, profile, done) => {
          //Promise is a tool we use with JS to handle asynchronous code
-
-        User.findOne({ googleID: profile.id }) //Makes sure unique users are saved, returns a promise
+         User.findOne({ googleID: profile.id }) //Makes sure unique users are saved, returns a promise
             .then((existingUser) => {
                 if(existingUser){
                     done(null, existingUser)

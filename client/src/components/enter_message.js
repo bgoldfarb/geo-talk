@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ShowText from './show_text'
+import moment from 'moment'
 let tempArray = []
 
 export default class EnterMessage extends Component {
@@ -8,7 +9,8 @@ export default class EnterMessage extends Component {
         super(props)
         this.state = {
             term : '',
-            termArray: []
+            termArray: [],
+            time: ""
         }
         this.onInputChange = this.onInputChange.bind(this)
         this.onFormSubmit = this.onFormSubmit.bind(this)
@@ -22,11 +24,29 @@ export default class EnterMessage extends Component {
 
     onFormSubmit(event){
         event.preventDefault()
-        tempArray.push(this.state.term)
-        // console.log(tempArray)
+        tempArray.push(this.timeNow() +": " + this.state.term)
         this.setState({termArray: tempArray })
-        this.setState({term: ''})
+        this.setState({
+            term: '', 
+            showText:true,
+            time: this.timeNow()
+        })
     }
+
+
+     convert(input) {
+        return moment(input, 'HH:mm:ss').format('h:mm:ss A');
+    }
+    
+
+     timeNow() {
+        let d = new Date(),
+            h = (d.getHours()<10?'0':'') + d.getHours(),
+            m = (d.getMinutes()<10?'0':'') + d.getMinutes(),
+            s = (d.getSeconds()<10?'0':'') + d.getSeconds();
+        let time = h + ':' + m + ':' + s;
+        return this.convert(time)
+      }
 
     render(){
         return(
@@ -42,7 +62,7 @@ export default class EnterMessage extends Component {
                 <button type="submit" className="btn btn-secondary">Submit </button>
             </span>
             </form>
-            <ShowText text = {this.state.termArray}/>
+            <ShowText text = {(this.state.termArray)}/>
             </div>
         )
     }

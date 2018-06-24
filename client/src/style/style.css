@@ -16,5 +16,6 @@
 
 .showing-text{
     padding-top: 25px;
-    color: #429ef4;
+    color: #64b5f6;
+    white-space: pre-line;
 }
