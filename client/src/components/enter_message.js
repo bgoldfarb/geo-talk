@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ShowText from './show_text'
 import moment from 'moment'
 let tempArray = []
+let reversedArray = []
 
 export default class EnterMessage extends Component {
 
@@ -25,7 +26,8 @@ export default class EnterMessage extends Component {
     onFormSubmit(event){
         event.preventDefault()
         tempArray.push(this.timeNow() +" Brian Gold: " + ": " + this.state.term)
-        this.setState({termArray: tempArray })
+        reversedArray = [...tempArray].reverse()
+        this.setState({termArray: reversedArray })
         this.setState({
             term: '', 
             showText:true,
