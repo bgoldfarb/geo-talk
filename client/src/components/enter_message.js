@@ -24,7 +24,7 @@ export default class EnterMessage extends Component {
 
     onFormSubmit(event){
         event.preventDefault()
-        tempArray.push(this.timeNow() +": " + this.state.term)
+        tempArray.push(this.timeNow() +" Brian Gold: " + ": " + this.state.term)
         this.setState({termArray: tempArray })
         this.setState({
             term: '', 

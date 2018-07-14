@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Radius from './radius'
 
 // import keys from '../config/keys'
 
@@ -26,6 +27,7 @@ fetchCity = async () => {
  }
 
     geoLocator(){
+        
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(pos => {
                 this.setState({
@@ -45,6 +47,7 @@ fetchCity = async () => {
                <button className = "btn" onClick = {() => this.geoLocator()}> Find My Location </button> 
                <div className = "current-position"> Position: {this.state.latitude}, {this.state.longitude} </div>
                <div className = "current-city" > City: {this.state.city}</div>
+               <Radius />
             </div>
         )
     }

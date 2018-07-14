@@ -4,6 +4,7 @@ const keys = require('../config/keys')
 const mongoose = require('mongoose')
 
 const User = mongoose.model('users') //access to mongo model class, fetching users from mongoose
+let userName = ""
 
 //Serialize user to create cookie for user
 passport.serializeUser((user, done) => {
@@ -35,7 +36,11 @@ passport.use(new GoogleStrategy({
                     }).save() //Take Model Instance and save to database!
                     .then(user => done(null, user))
                 }
-            }) 
-
+            })  
+            userName = profile.displayName
+            console.log(userName)
     })
 );
+
+process.env.USER_NAME=userName
+console.log(process.env.USER_NAME)
